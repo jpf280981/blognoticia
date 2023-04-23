@@ -22,7 +22,7 @@ function cadastrar() {
       <p>Cadastro de Autor</p>
       
       <label>
-        Nome:
+        Nome::
         <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} />
       </label>
       <br />
