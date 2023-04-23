@@ -7,7 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { MessageCallbackContext } from "../layout";
 import BusyButton from "@/app/componentes/buusybutton";
-import { AtualizarTipoCursoContext } from "./cliente";
+import { AtualizartitulonoticiaContext } from "./cliente";
 
 export const schema = yup.object({
     nome: yup.string()
@@ -19,12 +19,12 @@ export const schema = yup.object({
         .required('A descrição é obrigatória')
 }).required();
 
-export default function TipoCursoNovo() {
+export default function titulonoticiaNovo() {
     const [modalShow, setModalShow] = useState(false);
     const [busy, setBusy] = useState(false);
 
     const messageCallback = useContext(MessageCallbackContext);
-    const atualizarCallback = useContext(AtualizarTipoCursoContext);
+    const atualizarCallback = useContext(AtualizartitulonoticiaContext);
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm({
         resolver: yupResolver(schema)
@@ -61,16 +61,21 @@ export default function TipoCursoNovo() {
             <Modal size="md" centered show={modalShow}>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Modal.Header>
-                        <Modal.Title>Novo Tipo de Curso</Modal.Title>
+                        <Modal.Title>Novo Títuloda noticia</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <label className="row mx-2">
-                            Nome
+                            Título
+                            <input type="text" className="form-control"  {...register("nome")} />
+                            <span className='text-danger'>{errors.nome?.message}</span>
+                        </label>
+                        <label className="row mx-2">
+                            SubTítulo
                             <input type="text" className="form-control"  {...register("nome")} />
                             <span className='text-danger'>{errors.nome?.message}</span>
                         </label>
                         <label className="row mx-2 mt-2">
-                            Descrição
+                            Texto
                             <textarea className="form-control" style={{ height: '120px' }}  {...register("descricao")} />
                             <span className='text-danger'>{errors.descricao?.message}</span>
                         </label>

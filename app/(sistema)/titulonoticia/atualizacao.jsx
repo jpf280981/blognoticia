@@ -7,7 +7,7 @@ import { schema } from "./novo";
 import { MessageCallbackContext } from "../layout";
 import { AtualizarTipoCursoContext } from "./cliente";
 
-export default function TipoCursoAtualizacao(props) {
+export default function TitulonoticiaAtualizacao(props) {
 
     const [modalShow, setModalShow] = useState(true);
     const [busy, setBusy] = useState(false);

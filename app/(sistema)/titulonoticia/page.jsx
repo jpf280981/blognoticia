@@ -12,8 +12,8 @@ export async function generateMetadata({ params }) {
 export default async function Page(){
     return(
         <>
-            <h2>Tipo de Curso</h2>
-            <h4>Exemplo de CRUD para Tipo de Curso</h4>
+            <h2>Notícia</h2>
+            <h4>Exemplo de notícia</h4>
 
             <Cliente serverRequest={handleRequest}/>
         </>

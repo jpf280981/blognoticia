@@ -11,10 +11,10 @@ import TipoCursoNovo from "./novo"
 import TipoCursoRemover from "./remocao"
 
 export const metadata = {
-    title: 'Tipo de Curso'
+    title: 'Notícia'
 }
 
-export const AtualizarTipoCursoContext = createContext(null);
+export const AtualizarTitulonoticiaContext = createContext(null);
 
 export default function Cliente(props) {
 
@@ -26,10 +26,10 @@ export default function Cliente(props) {
     let modal = null;
 
     if (operacao.action === "update") {
-        modal = <TipoCursoAtualizacao id={operacao.id} />
+        modal = <titulonoticiaAtualizacao id={operacao.id} />
     }
     else if (operacao.action === "delete") {
-        modal = <TipoCursoRemover id={operacao.id} />
+        modal = <titulonoticiaRemover id={operacao.id} />
     }
 
     const fecharModals = () => {
@@ -72,10 +72,10 @@ export default function Cliente(props) {
 
     return (
         <>
-            <AtualizarTipoCursoContext.Provider value={{ atualizar: setAtualizarGrid, fechar: fecharModals, serverRequest: props.serverRequest }}>
+            <AtualizartitulonoticiaContext.Provider value={{ atualizar: setAtualizarGrid, fechar: fecharModals, serverRequest: props.serverRequest }}>
                 <TipoCursoNovo />
                 {modal}
-            </AtualizarTipoCursoContext.Provider>
+            </AtualizartitulonoticiaContext.Provider>
 
             <Table striped hover>
                 <thead>

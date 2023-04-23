@@ -3,9 +3,9 @@ import { useContext, useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { MessageCallbackContext } from "../layout";
-import { AtualizarTipoCursoContext } from "./cliente";
+import { AtualizartitulonoticiaContext } from "./cliente";
 
-export default function TipoCursoRemover(props) {
+export default function titulonoticiaRemover(props) {
 
     const [modalShow, setModalShow] = useState(true);
     const [busy, setBusy] = useState(false);
