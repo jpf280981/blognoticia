@@ -19,7 +19,7 @@ function cadastrar() {
 
     <form onSubmit={handleSubmit}>
 
-      <p>Cadastro de Autor</p>
+      <p>Cadastro do Autor</p>
       
       <label>
         Nome:
